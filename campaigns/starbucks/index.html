@@ -1,0 +1,104 @@
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<script>
+
+$( document ).ready(function() {
+//usage:https://github.com/axios/axios
+
+    axios({
+    method:'get',
+    url:'http://api.openweathermap.org/data/2.5/weather?q=Toronto,CA&units=metric&APPID=ce41bb642943da1e1d39cad0b444d083',  //sample JSON data
+    })
+    .then(function (response) {
+        var data = response.data;
+        $("#temp").html(Math.round(data.main.temp) + "°C");
+        $("#cityName").html(data.name);
+        // $("#icon").html("http://openweathermap.org/img/w/" + data.weather.icon + ".png");
+        $("#icon").html("<img src='http://openweathermap.org/img/w/02n.png'>");
+
+    });
+});
+
+
+</script>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body { margin:0; }
+
+/* Create three equal column-sides that floats next to each other */
+@keyframes panning {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+   100% {
+    background-position: 0% 0%;
+  }
+}
+
+.column-left {
+  float: left;
+  width: 1278px;
+  padding: 10px;
+  height:2574px;
+  background-image: url('Images/sunnybg.jpg');
+  font-size: 200pt;
+}
+
+.column-right {
+  float: left;
+  width: 1278px;
+  padding: 10px;
+  height:2574px;
+  background-image: url('Images/blurredBG1.png');
+  animation: panning 20s infinite linear;
+}
+
+.column-center {
+  width: 126px;
+  float: left;
+  padding: 10px;
+  height: 2574px; /* Should be removed. Only for demonstration */
+  background-image: url('Images/middle/mid_opt2.png');
+}
+
+/* Clear floats after the column-sides */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+</head>
+<body>
+
+<div class="row">
+  <div class="column-left" style="background-color:#aaa;">
+
+    <div id="temp">Temperature</div>
+    <div id="cityName">City Name</div>
+    <div id="icon">URL for Icon</div>
+
+  </div>
+  <div class="column-center" style="background-color:#bbb;">
+
+  </div>
+  <div class="column-right" style="background-color:#ccc;">
+
+  </div>
+</div>
+
+</body>
+</html>
