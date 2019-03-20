@@ -9,7 +9,7 @@ $( document ).ready(function() {
 
     axios({
     method:'get',
-    url:'http://api.openweathermap.org/data/2.5/weather?q=Toronto,CA&units=metric&APPID=ce41bb642943da1e1d39cad0b444d083',  //sample JSON data
+    url:'https://api.openweathermap.org/data/2.5/weather?q=Toronto,CA&units=metric&APPID=ce41bb642943da1e1d39cad0b444d083',  //sample JSON data
     })
     .then(function (response) {
         var data = response.data;
