@@ -13,13 +13,28 @@ $( document ).ready(function() {
     })
     .then(function (response) {
         var data = response.data;
-        $("#temp").html(Math.round(data.main.temp) + "°C");
+        $("#temp").html(Math.round(data.main.temp) + "°");
         $("#cityName").html(data.name);
         // $("#icon").html("http://openweathermap.org/img/w/" + data.weather.icon + ".png");
-        $("#icon").html("<img src='http://openweathermap.org/img/w/02n.png'>");
+        $("#description").html(data.description);
+
+        var d = new Date();
+        var weekday = new Array(7);
+        weekday[0] = "Sunday";
+        weekday[1] = "Monday";
+        weekday[2] = "Tuesday";
+        weekday[3] = "Wednesday";
+        weekday[4] = "Thursday";
+        weekday[5] = "Friday";
+        weekday[6] = "Saturday";
+
+        var n = weekday[d.getDay()];
+        $("#dayofWeek").html(n + ", March " + d.getDate() + "st");
 
     });
 });
+
+
 
 
 </script>
@@ -29,6 +44,27 @@ $( document ).ready(function() {
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
+
+    @font-face {
+  font-family: sc-bi;
+  src: url(Fonts/Superclarendon-Bold-Italic.ttf);
+}
+
+    @font-face {
+  font-family: sc-b;
+  src: url(Fonts/Superclarendon-Bold.ttf);
+}
+
+    @font-face {
+  font-family: sc-li;
+  src: url(Fonts/Superclarendon-Light-Italic.ttf);
+}
+
+    @font-face {
+  font-family: sc-l;
+  src: url(Fonts/Superclarendon-Light.ttf);
+}
+
 * {
   box-sizing: border-box;
 }
@@ -37,6 +73,13 @@ body {
   margin:0;
   height: 2574px;
   width: 2682px; 
+}
+
+table{
+  color: white;
+  width: 100%;
+  text-align: center;
+  margin-top: 500px;
 }
 
 /* Create three equal column-sides that floats next to each other */
@@ -52,13 +95,24 @@ body {
   }
 }
 
+@keyframes fadeIn{
+  0% {
+   opacity: 0.0;
+  }
+  100% {
+   opacity: 1.0;
+  }
+}
+
 .column-left {
   float: left;
   width: 1278px;
   padding: 10px;
   height:2574px;
-  background-image: url('Images/sunnybg.jpg');
-  font-size: 200pt;
+  background-image: url('Images/blue-bg-04.png');
+  font-size: 3em;
+  color: white;
+  animation: fadeIn 3s 200ms;
 }
 
 .column-right {
@@ -90,10 +144,24 @@ body {
 
 <div class="row">
   <div class="column-left" style="background-color:#aaa;">
-
-    <div id="temp">Temperature</div>
-    <div id="cityName">City Name</div>
-    <div id="icon">URL for Icon</div>
+<table>
+  <tr>
+    <td><div id="cityName" style="font-family: sc-bi; font-size: 12em;">City Name</div></td>
+  </tr>
+  <tr>
+    <td><div id="dayofWeek" style="font-family: sc-l; font-size: 4em;">City Name</div></td>
+  </tr>
+  <tr>
+    <td><div id="temp" style="font-family: sc-b; font-size: 30em;">Temperature</div></td>
+  </tr>
+  <tr>
+    <td><img src="Images/s-clouds.png" style="width: 400px;"></td>
+  </tr>
+  <tr>
+    <td><div id="description" style="font-size: 2.8em; font-family: sc-li;">Scattered Clouds</div></td>
+  </tr>
+</table>
+    
 
   </div>
   <div class="column-center" style="background-color:#bbb;">
