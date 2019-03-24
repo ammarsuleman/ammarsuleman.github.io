@@ -1,3 +1,6 @@
+var prompt = prompt("Enter sample temperature:", "22");
+var tempInt = parseInt(prompt);
+
 $( document ).ready(function() {
 //usage:https://github.com/axios/axios
 
@@ -8,7 +11,7 @@ $( document ).ready(function() {
     .then(function (response) {
         var data = response.data;
 
-        if (Math.round(data.main.temp) < 20) {
+        if (tempInt < 20) {
             document.getElementById('column-left').style.backgroundImage = "url('Images/bg1.png')";
             document.getElementById('drink-image').style.backgroundImage = "url('Images/starbucks_hotdrink-07.png')";
             document.getElementById('drink-title').style.backgroundImage = "url('Images/drink_title2-09.png')";
@@ -21,7 +24,8 @@ $( document ).ready(function() {
         }
 
 
-        $("#temp").html(Math.round(data.main.temp) + "°");
+        // $("#temp").html(Math.round(data.main.temp) + "°");
+        $("#temp").html(tempInt + "°");
         $("#cityName").html(data.name);
         $("#description").html(data.description);
 
