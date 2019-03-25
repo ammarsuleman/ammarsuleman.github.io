@@ -9,13 +9,11 @@ $( document ).ready(function() {
         var data = response.data;
 
         if (Math.round(data.main.temp) < 20) {
-            document.getElementById('column-left').style.backgroundImage = "url('Images/bg1.png')";
             document.getElementById('drink-image').style.backgroundImage = "url('Images/starbucks_hotdrink-07.png')";
             document.getElementById('drink-title').style.backgroundImage = "url('Images/drink_title2-09.png')";
 
         }
         else {
-            document.getElementById('column-left').style.backgroundImage = "url('Images/bg1.png')";
             document.getElementById('drink-image').style.backgroundImage = "url('Images/frapp_div-05.png')";
             document.getElementById('drink-title').style.backgroundImage = "url('Images/frapp_title-06.png')";
         }
@@ -26,6 +24,16 @@ $( document ).ready(function() {
         $("#description").html(data.description);
 
         var d = new Date();
+
+        console.log(d.getHours());
+
+        if (d.getHours() >= 7 && d.getHours() <= 20) { //daytime
+            document.getElementById('column-left').style.backgroundImage = "url('Images/bg1.png')";
+        }
+        else{ //nighttime
+            document.getElementById('column-left').style.backgroundImage = "url('Images/night_bg.jpg')";
+        }
+
         var weekday = new Array(7);
         weekday[0] = "Sunday";
         weekday[1] = "Monday";
