@@ -1,0 +1,17 @@
+CACHE MANIFEST
+# 2019-04-11:v11
+
+# Explicitly cached entries
+index.html
+./Branded Cities_files/aob-south.css
+./Branded Cities_files/1e6ab715a3a95d4603.js
+https://use.typekit.net/ngy8pjf.css
+
+# All other resources (e.g. sites) require the user to be online. 
+NETWORK:
+*
+
+# Additional resources to cache
+CACHE:
+./Branded Cities_files/aob2.webp
+./Branded Cities_files/aob2.webm
