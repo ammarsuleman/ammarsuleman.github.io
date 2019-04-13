@@ -1,0 +1,192 @@
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="script.js" charset="UTF-8"></script>
+
+<script>
+
+
+</script>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+    @font-face {
+  font-family: sc-bi;
+  src: url(Fonts/Superclarendon-Bold-Italic.ttf);
+}
+
+    @font-face {
+  font-family: sc-b;
+  src: url(Fonts/Superclarendon-Bold.ttf);
+}
+
+    @font-face {
+  font-family: sc-li;
+  src: url(Fonts/Superclarendon-Light-Italic.ttf);
+}
+
+    @font-face {
+  font-family: sc-l;
+  src: url(Fonts/Superclarendon-Light.ttf);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body { 
+  margin:0;
+  height: 2574px;
+  width: 2682px; 
+}
+
+table{
+  color: white;
+  width: 100%;
+  text-align: center;
+  margin-top: 160px;
+  animation: fadeIn 3s 200ms;
+  animation: blur 3s;
+}
+
+#perfectLine{
+  position: absolute;
+  font-family: sc-bi;
+  font-size: 10.5em;
+  width: 800px;
+  color: white;
+  line-height: 170px;
+/*  border: 5px solid red;*/
+  margin-top: 100px;
+  margin-left: 75px;
+  animation: fadeIn 3s 200ms;
+  animation: blur 3s;
+}
+
+#drink-image {
+  position: absolute;
+/*  border: 5px solid red;*/
+width: 1013px;
+height: 1770px;
+  margin-top: 520px;
+  margin-left: 240px;
+  transform: rotate(2deg);
+  background-image: url('Images/frapp_div-05.png');
+  animation: blur 2s;
+  animation: fadeIn 3s 200ms;
+  animation: scale 10s infinite;
+}
+
+#drink-title {
+  position: absolute;
+  margin-top: 2370px;
+  margin-left: 367px;
+  transform: rotate(2deg);
+  width: 661;
+  height: 81;
+  background-image: url('Images/frapp_title-06.png');
+  animation: blur 3s;
+  animation: fadeIn 3s 200ms;
+}
+
+/* Create three equal column-sides that floats next to each other */
+@keyframes panning {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+   100% {
+    background-position: 0% 0%;
+  }
+}
+
+@keyframes blur {
+  0% {
+    -webkit-filter: blur(25px);
+  }
+   100% {
+    -webkit-filter: blur(0px);
+  }
+}
+
+@keyframes fadeIn{
+  0% {
+   opacity: 0.0;
+  }
+  100% {
+   opacity: 1.0;
+  }
+}
+
+@keyframes scale{
+  0% {
+   -webkit-transform: scale(0.95) rotate(1deg);
+  }
+  50% {
+   -webkit-transform: scale(1.0) rotate(2deg);
+  }
+  100% {
+   -webkit-transform: scale(0.95) rotate(1deg);
+  }
+}
+
+#column-left {
+  float: left;
+  width: 1278px;
+  padding: 10px;
+  height:2574px;
+  background-image: url('Images/left_transat-13.png');
+  font-size: 3em;
+  color: white;
+}
+
+#column-right {
+  float: left;
+  width: 1278px;
+  padding: 10px;
+  height:2574px;
+  background-image: url('Images/r_bg-15.png');
+}
+
+#middle {
+  width: 126px;
+  float: left;
+  padding: 10px;
+  height: 2574px; /* Should be removed. Only for demonstration */
+  background-image: url('Images/middle-14.png');
+}
+
+.spacer {
+  height: 375px;
+}
+
+/* Clear floats after the column-sides */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+</head>
+<body>
+
+<div class="row">
+  <div id="column-left" style="background-color:#aaa;">
+
+
+  </div>
+  <div id="middle" style="background-color:#bbb;">
+
+  </div>
+  <div id="column-right">
+
+  </div>
+</div>
+
+</body>
+</html>
